@@ -22,7 +22,7 @@ def get_args(stdin, verbose=False):
     # Datasets params
     parser.add_argument('--dataset', type=str, default='voc', help='Name of the dataset.')
     parser.add_argument('--data_base_path', type=str, default='./datasets/data', help='The data base path.')
-    parser.add_argument('--batch_size', type=int, default=256, help='The batch size.')
+    parser.add_argument('--batch_size', type=int, default=64, help='The batch size.')
     parser.add_argument('--num_workers', type=int, default=8, help='The number of workers for the dataloader.')
     parser.add_argument('--validation_ratio', type=float, default=0.2, help='The validation ratio.')
 
@@ -33,7 +33,7 @@ def get_args(stdin, verbose=False):
 
     # Model params
     parser.add_argument('--model_checkpoint', type=str, default='', help='The model checkpoint path (*.ckpt).')
-    parser.add_argument('--backbone', type=str, default='mlp_mixer', help='The model bacbkone.')
+    parser.add_argument('--backbone', type=str, default='vit', help='The model bacbkone.')
     parser.add_argument('--label_smoothing', type=float, default=0.1, help='Label smoothing.')
 
     # Parse args
