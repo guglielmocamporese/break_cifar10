@@ -51,7 +51,7 @@ class Classifier(pl.LightningModule):
             backbone = resnet.resnet50(pretrained=True, num_classes=self.num_classes)
 
         elif self.args.backbone == 'mlp_mixer':
-            backbone = mlp_mixer.MLPMixer(image_size=32, patch_size=8, dim=512, depth=4, num_classes=self.num_classes)
+            backbone = mlp_mixer.mixer_s16_224(num_classes=self.num_classes, pretrained=True)
 
         else:
             raise Exception(f'Error. Backbone "{self.args.backbone}" not supported.')

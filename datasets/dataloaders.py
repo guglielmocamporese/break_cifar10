@@ -31,7 +31,7 @@ class TransformDataset(Dataset):
 
 
 def get_transforms(args):
-    if args.backbone == 'vit':
+    if args.backbone in ['vit', 'mlp_mixer']:
         transform = {
             'train': transforms.Compose([
                 transforms.Resize((224, 224)),
