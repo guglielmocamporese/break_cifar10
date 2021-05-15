@@ -9,9 +9,6 @@ import torch.nn.functional as F
 from torch.optim import SGD, Adam
 
 # Custom
-#from models.vit import vit
-#from models.resnet import resnet
-#from models.mlp_mixer import mlp_mixer
 from timm import models
 from losses import cross_entropy
 from metrics import accuracy
@@ -52,7 +49,7 @@ class Classifier(pl.LightningModule):
             backbone = models.resnet.resnet50(pretrained=True, num_classes=self.num_classes)
 
         elif self.args.backbone == 'mlp_mixer':
-            backbone = models.mlp_mixer.mixer_s16_224(num_classes=self.num_classes, pretrained=True)
+            backbone = models.mlp_mixer.mixer_b16_224(num_classes=self.num_classes, pretrained=True)
 
         else:
             raise Exception(f'Error. Backbone "{self.args.backbone}" not supported.')

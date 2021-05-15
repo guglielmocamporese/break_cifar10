@@ -33,7 +33,7 @@ def get_args(stdin, verbose=False):
 
     # Model params
     parser.add_argument('--model_checkpoint', type=str, default='', help='The model checkpoint path (*.ckpt).')
-    parser.add_argument('--backbone', type=str, default='resnet18', help='The model bacbkone.')
+    parser.add_argument('--backbone', type=str, default='resnet50', help='The model bacbkone.')
     parser.add_argument('--label_smoothing', type=float, default=0.1, help='Label smoothing.')
 
     # Parse args
