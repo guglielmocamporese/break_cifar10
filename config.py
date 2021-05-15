@@ -15,7 +15,7 @@ def get_args(stdin, verbose=False):
     # Global params
     parser.add_argument('--seed', type=int, default=35771, help='The random seed.')
     parser.add_argument('--logger', type=str, default='wandb', help='The logger to use for the experiments.')
-    parser.add_argument('--mode', type=str, default='train', help='The mode of the program, can "train" or "validate"')
+    parser.add_argument('--mode', type=str, default='ensamble', help='The mode of the program, can "train" or "validate"')
     parser.add_argument('--num_gpus', type=int, default=1, help='The number of GPUs.')
     parser.add_argument('--epochs', type=int, default=100, help='The number of epochs for the training.')
 
@@ -32,12 +32,16 @@ def get_args(stdin, verbose=False):
     parser.add_argument('--metric_monitor', type=str, default='val_acc', help='The metric used for early stopping.')
 
     # Model params
-    parser.add_argument('--model_checkpoint', type=str, default='./checkpoints/mlp_mixer.ckpt', help='The model checkpoint path (*.ckpt).')
-    parser.add_argument('--backbone', type=str, default='vit', help='The model bacbkone.')
+    parser.add_argument('--model_checkpoint', type=str, default='./checkpoints/resnet18.ckpt', help='The model checkpoint path (*.ckpt).')
+    parser.add_argument('--backbone', type=str, default='resnet18', help='The model bacbkone.')
     parser.add_argument('--label_smoothing', type=float, default=0.1, help='Label smoothing.')
 
     # Parse args
     args = parser.parse_args()
+
+    if len(args.backbone.split()) > 1 or args.mode == 'ensamble':
+        args.backbone = args.backbone.split()
+        args.model_checkpoint = args.model_checkpoint.split()
 
     if verbose:
         print('Input Args: ' + json.dumps(vars(args), indent=4))
