@@ -42,13 +42,13 @@ class Classifier(pl.LightningModule):
             backbone = vit.vit_small_patch16_224(num_classes=self.num_classes, pretrained=True)
 
         elif self.args.backbone == 'resnet18':
-            backbone = resnet.ResNet18(num_classes=self.num_classes)
+            backbone = resnet.resnet18(pretrained=True, num_classes=self.num_classes)
 
         elif self.args.backbone == 'resnet34':
-            backbone = resnet.ResNet34(num_classes=self.num_classes)
+            backbone = resnet.resnet34(pretrained=True, num_classes=self.num_classes)
             
         elif self.args.backbone == 'resnet50':
-            backbone = resnet.ResNet50(num_classes=self.num_classes)
+            backbone = resnet.resnet50(pretrained=True, num_classes=self.num_classes)
 
         elif self.args.backbone == 'mlp_mixer':
             backbone = mlp_mixer.MLPMixer(image_size=32, patch_size=8, dim=512, depth=4, num_classes=self.num_classes)
@@ -86,6 +86,13 @@ class Classifier(pl.LightningModule):
         Define a single validation step.
         """
         return self.training_step(batch, batch_idx, part='val')
+
+    
+    def test_step(self, batch, batch_idx):
+        """
+        Define a single test step.
+        """
+        return self.training_step(batch, batch_idx, part='test')
 
     def configure_optimizers(self):
         """

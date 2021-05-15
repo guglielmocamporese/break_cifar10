@@ -28,7 +28,7 @@ def cos_anneal_warmup(e0, e1, t0, t1, e_w, e):
     return t
 
 class DecayLR(pl.Callback):
-    def __init__(self, lr_init=3e-4, lr_end=1.25e-6, log_lr=False):
+    def __init__(self, lr_init=3e-4, lr_end=0.0, log_lr=False):
         super(DecayLR, self).__init__()
         self.lr_init = lr_init
         self.lr_end = lr_end

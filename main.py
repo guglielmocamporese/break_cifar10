@@ -28,9 +28,13 @@ def main(args):
     if args.mode in ['train', 'training']:
         trainer.fit(model, dls['train_aug'], dls['validation'])
         trainer.validate(model=None, val_dataloaders=dls['validation'])
+        trainer.test(model=None, test_dataloaders=dls['test'])
 
     elif args.mode in ['validate', 'validation', 'validating']:
         trainer.validate(model, val_dataloaders=dls['validation'])
+
+    elif args.mode in ['test', 'testing']:
+        trainer.test(model, test_dataloaders=dls['test'])
 
     else:
         raise Exception(f'Error. Model "{args.mode}" not supported.')
