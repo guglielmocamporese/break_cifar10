@@ -37,7 +37,7 @@ class Classifier(pl.LightningModule):
 
     def _get_backbone(self):
         if self.args.backbone == 'vit':
-            backbone = models.vit.vit_small_patch16_224(num_classes=self.num_classes, pretrained=True)
+            backbone = models.vision_transformer.vit_small_patch16_224(num_classes=self.num_classes, pretrained=True)
 
         elif self.args.backbone == 'resnet18':
             backbone = models.resnet.resnet18(pretrained=True, num_classes=self.num_classes)

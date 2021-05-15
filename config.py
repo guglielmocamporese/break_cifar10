@@ -32,8 +32,8 @@ def get_args(stdin, verbose=False):
     parser.add_argument('--metric_monitor', type=str, default='val_acc', help='The metric used for early stopping.')
 
     # Model params
-    parser.add_argument('--model_checkpoint', type=str, default='', help='The model checkpoint path (*.ckpt).')
-    parser.add_argument('--backbone', type=str, default='resnet50', help='The model bacbkone.')
+    parser.add_argument('--model_checkpoint', type=str, default='./checkpoints/mlp_mixer.ckpt', help='The model checkpoint path (*.ckpt).')
+    parser.add_argument('--backbone', type=str, default='vit', help='The model bacbkone.')
     parser.add_argument('--label_smoothing', type=float, default=0.1, help='Label smoothing.')
 
     # Parse args
