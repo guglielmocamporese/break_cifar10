@@ -9,9 +9,10 @@ import torch.nn.functional as F
 from torch.optim import SGD, Adam
 
 # Custom
-from models.vit import vit
-from models.resnet import resnet
-from models.mlp_mixer import mlp_mixer
+#from models.vit import vit
+#from models.resnet import resnet
+#from models.mlp_mixer import mlp_mixer
+from timm import models
 from losses import cross_entropy
 from metrics import accuracy
 
@@ -39,19 +40,19 @@ class Classifier(pl.LightningModule):
 
     def _get_backbone(self):
         if self.args.backbone == 'vit':
-            backbone = vit.vit_small_patch16_224(num_classes=self.num_classes, pretrained=True)
+            backbone = models.vit.vit_small_patch16_224(num_classes=self.num_classes, pretrained=True)
 
         elif self.args.backbone == 'resnet18':
-            backbone = resnet.resnet18(pretrained=True, num_classes=self.num_classes)
+            backbone = models.resnet.resnet18(pretrained=True, num_classes=self.num_classes)
 
         elif self.args.backbone == 'resnet34':
-            backbone = resnet.resnet34(pretrained=True, num_classes=self.num_classes)
+            backbone = models.resnet.resnet34(pretrained=True, num_classes=self.num_classes)
             
         elif self.args.backbone == 'resnet50':
-            backbone = resnet.resnet50(pretrained=True, num_classes=self.num_classes)
+            backbone = models.resnet.resnet50(pretrained=True, num_classes=self.num_classes)
 
         elif self.args.backbone == 'mlp_mixer':
-            backbone = mlp_mixer.mixer_s16_224(num_classes=self.num_classes, pretrained=True)
+            backbone = models.mlp_mixer.mixer_s16_224(num_classes=self.num_classes, pretrained=True)
 
         else:
             raise Exception(f'Error. Backbone "{self.args.backbone}" not supported.')
