@@ -24,7 +24,8 @@ def get_trainer(args, dls):
         'deterministic': True,
         'callbacks': callbacks,
         'logger': logger,
-        'max_steps': args.epochs * len(dls['train_aug'])
+        'max_steps': args.epochs * len(dls['train_aug']),
+        'stochastic_weight_avg': True,
     }
     trainer = pl.Trainer(**trainer_args)
     return trainer
