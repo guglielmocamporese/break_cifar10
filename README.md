@@ -16,7 +16,10 @@ You need to have the main packages for training NNS... (PyTorch, PyTorch Lightni
 ### Train a model
 ```
 # Run the main
-$ python main.py
+$ python main.py --mode train --model vit
+
+# Test
+$ python main.py --mode test --model vit --model_checkpoint 'your/model/checkpoint.ckpt'
 ```
 
 You can change the model in the `config.py` file.
