@@ -22,5 +22,4 @@ $ python main.py --mode train --model vit
 $ python main.py --mode test --model vit --model_checkpoint 'your/model/checkpoint.ckpt'
 ```
 
-You can change the model in the `config.py` file. Supported models are `ResNet-18`, `ResNet-34`, `ResNet50`, 'ViT' and 'MLP-Mixer'.
-
+You can change the model in the `config.py` file. Supported models are `ResNet-18`, `ResNet-34`, `ResNet50`, `ViT` and `MLP-Mixer`.
