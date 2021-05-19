@@ -1,6 +1,6 @@
 # How to Break the CIFAR-10
 
-Code for the submission of the contest of *VCS AY 2020-2021*, the Vision and Cognitive Service class, University of Padova, Italy.
+Code for the Top-1 submission of contest of *VCS AY 2020-2021*, the Vision and Cognitive Service class, University of Padova, Italy.
 
  ```
  If you find this repo useful, please consider to give a star ⭐ !
