@@ -18,7 +18,7 @@ from metrics import accuracy
 
 def main(args):
 
-    if args.mode != 'ensamble':
+    if args.mode != 'ensemble':
 
         # Dataloaders
         dls = get_dataloaders(args)
@@ -41,7 +41,7 @@ def main(args):
     elif args.mode in ['test', 'testing']:
         trainer.test(model, test_dataloaders=dls['test'])
 
-    elif args.mode == 'ensamble':
+    elif args.mode == 'ensemble':
         predictions = []
         labels = []
         backbones = args.backbone
