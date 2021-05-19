@@ -39,7 +39,7 @@ def get_args(stdin, verbose=False):
     # Parse args
     args = parser.parse_args()
 
-    if len(args.backbone.split()) > 1 or args.mode == 'ensamble':
+    if len(args.backbone.split()) > 1 or args.mode == 'ensemble':
         args.backbone = args.backbone.split()
         args.model_checkpoint = args.model_checkpoint.split()
 
