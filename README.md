@@ -3,7 +3,7 @@
 Code for the submission of the contest of *VCS AY 2020-2021*, the Vision and Cognitive Service class, University of Padova, Italy.
 
  ```
- If you find this list useful, please consider to give a star ⭐ !
+ If you find this repo useful, please consider to give a star ⭐ !
  ```
  
 ### Dataset
