@@ -5,7 +5,7 @@ Code for the submission of the contest of *VCS AY 2020-2021*, the Vision and Cog
 ### Results on CIFAR-10
 |   | ResNet18 [[1](https://arxiv.org/pdf/1512.03385.pdf)] | ResNet34 [[1](https://arxiv.org/pdf/1512.03385.pdf)] | ResNet50 [[1](https://arxiv.org/pdf/1512.03385.pdf)] | ResNet Ens [[1](https://arxiv.org/pdf/1512.03385.pdf)] | MLP-Mixer [[2](https://arxiv.org/pdf/2105.01601.pdf)] | ViT-S/16 [[3](https://arxiv.org/pdf/2010.11929.pdf)] |  ViT-B/16 [[3](https://arxiv.org/pdf/2010.11929.pdf)] | 
 | - | - | - | - | - | - | - | - |
-| **Accuracy** | 95.01 % | 96.92 % | 95.46 % | 97.53 % | 94.67 % | 96.05 % | 98.67 % |
+| **Accuracy** | 95.01 % | 96.92 % | 95.46 % | 97.53 % | 94.67 % | 96.05 % | **98.67 %** |
 
 
 ### Install
