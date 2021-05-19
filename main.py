@@ -72,11 +72,6 @@ def main(args):
         acc = accuracy(predictions, labels)
         print(f'Ensamble Accuracy: {acc}')
 
-
-
-
-
-
     else:
         raise Exception(f'Error. Model "{args.mode}" not supported.')
 
