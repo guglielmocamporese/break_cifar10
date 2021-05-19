@@ -14,7 +14,7 @@ def get_args(stdin, verbose=False):
 
     # Global params
     parser.add_argument('--seed', type=int, default=35771, help='The random seed.')
-    parser.add_argument('--logger', type=str, default='wandb', help='The logger to use for the experiments.')
+    parser.add_argument('--logger', type=str, default='tensorboard', help='The logger to use for the experiments, can be "tensorboard" or "wandb".')
     parser.add_argument('--mode', type=str, default='ensamble', help='The mode of the program, can "train" or "validate"')
     parser.add_argument('--num_gpus', type=int, default=1, help='The number of GPUs.')
     parser.add_argument('--epochs', type=int, default=10, help='The number of epochs for the training.')
