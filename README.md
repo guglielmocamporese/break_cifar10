@@ -2,6 +2,12 @@
 
 Code for the submission of the contest of *VCS AY 2020-2021*, the Vision and Cognitive Service class, University of Padova, Italy.
 
+### Results on CIFAR-10
+|   | ResNet18 [[1](https://arxiv.org/pdf/1512.03385.pdf)] | ResNet34 [[1](https://arxiv.org/pdf/1512.03385.pdf)] | ResNet50 [[1](https://arxiv.org/pdf/1512.03385.pdf)] | ResNet Ens [[1](https://arxiv.org/pdf/1512.03385.pdf)] | MLP-Mixer [[2](https://arxiv.org/pdf/2105.01601.pdf)] | ViT-S/16 [[3](https://arxiv.org/pdf/2010.11929.pdf)] |  ViT-B/16 [[3](https://arxiv.org/pdf/2010.11929.pdf)] | 
+| - | - | - | - | - | - | - | - |
+| **Accuracy** | 95.01 % | 96.92 % | 95.46 % | 97.53 % | 94.67 % | 96.05 % | 98.67 % |
+
+
 ### Install
 ```bash
 # Clone the repo 
@@ -27,8 +33,3 @@ $ python main.py --mode test --model vit --model_checkpoint 'your/model/checkpoi
 ```
 
 You can change the model in the `config.py` file. Supported models are `ResNet-18`, `ResNet-34`, `ResNet50`, `ViT` and `MLP-Mixer`.
-
-### Results on CIFAR-10
-| - | ResNet18 [[1](https://arxiv.org/pdf/1512.03385.pdf)] | ResNet34 [[1](https://arxiv.org/pdf/1512.03385.pdf)] | ResNet50 [[1](https://arxiv.org/pdf/1512.03385.pdf)] | ResNet Ens [[1](https://arxiv.org/pdf/1512.03385.pdf)] | MLP-Mixer [[2](https://arxiv.org/pdf/2105.01601.pdf)] | ViT-S/16 [[3](https://arxiv.org/pdf/2010.11929.pdf)] |  ViT-B/16 [[3](https://arxiv.org/pdf/2010.11929.pdf)] | 
-| - | - | - | - | - | - | - | - |
-| **Accuracy** | 95.01 % | 96.92 % | 95.46 % | 97.53 % | 94.67 % | 96.05 % | 98.67 % |
