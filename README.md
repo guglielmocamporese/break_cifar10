@@ -6,7 +6,7 @@ Code for the Top-1 submission of contest of *VCS AY 2020-2021*, the Vision and C
  If you find this repo useful, please consider to give a star ⭐ !
  ```
  
-### Dataset
+### The CIFAR-10 Dataset [[link](https://www.cs.toronto.edu/~kriz/cifar.html)]
 ![](cifar10.png)
 
 ### Results on CIFAR-10
